@@ -1,0 +1,28 @@
+/* Empty. Add your own CSS if you like */
+.item-imgComic  {
+width:10% !important;
+height : 10% !important;
+max-width: 100px !important;  //any size
+max-height: 100px !important; //any size
+}
+.item-fullComic  {
+  width:100% !important;
+  height : auto !important;
+}
+.item-modal-search  {
+  width:80% !important;
+  height : 20% !important;
+}
+
+.bar {
+    background-color:#b8dcff ;
+  }
+
+.item {
+    background-color:#fffdf5 ;
+    margin:3px;
+}
+
+img{
+      border: 2px solid #b8dcff;
+}

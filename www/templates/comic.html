@@ -1,0 +1,49 @@
+
+<ion-header-bar class="bar bar-header">
+  <a  href="#/app/index/" class="button icon-left ion-chevron-left button-clear button-dark">Volver</a>
+</ion-header-bar>
+
+<ion-view view-title="">
+
+
+<ion-content class="has-header">
+    <div class="list card">
+
+    <div class="item item-avatar">
+      <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+      <h2>{{comic.title}}</h2>
+      <p>Cantidad de paginas: {{comic.pageCount}}</p>
+    </div>
+
+    <div class="item item-body">
+      <div class = "row">
+        <div class="col col-65">
+          <img class="item-fullComic" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+        </div>
+        <div class="col col-35">
+          <h2>Descripcion</h2>
+          <p>
+            {{comic.description}}
+          </p>
+          <h2>Precio :</h2>
+          <p>
+            <p ng-repeat="precio in comic.prices">
+              Precio: {{precio.price}} US, {{precio.type}}
+            </p>
+          </p>
+          <h2>Creadores : </h2>
+          <div class = "row">
+            <div class="col"> <h3>Nombre</h3></div><div class="col"> <h3>Rol</h3></div>
+          </div>
+          <div class = "row" ng-repeat="creador in comic.creators.items">
+            <div class="col"> {{creador.name}}</div><div class="col"> {{creador.role}}</div>
+          </div>
+
+
+      </div>
+      </div>
+    </div>
+
+  </div>
+  </ion-content>
+</ion-view>

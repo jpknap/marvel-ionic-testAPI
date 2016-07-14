@@ -1,0 +1,36 @@
+<ion-view >
+  <ion-content>
+    <div class="bar bar-header item-input-inset">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <label class="item-input-wrapper">
+
+        <input ng-model="searchTitle" type="search" placeholder="Titulo" />
+      </label>
+      <label class="item-input-wrapper" style="margin-left: 10px;">
+
+      <input ng-model="searchYear" type="number" placeholder="Año Publicacion" />
+    </label>
+    <button ng-click="searchFiltre(searchTitle,searchYear);" class="icon ion-ios-search  button" >
+      Buscar
+    </button>
+  </div>
+    <ion-list>
+  <div class="list">
+
+      <a class="item item-thumbnail-left" ng-repeat="comic in comics" href="#/app/comic/{{comic.id}}">
+        <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}"></img>
+        <h2>{{comic.title}}</h2>
+        <p>{{comic.description}}</p>
+      </a>
+  </div>
+
+    </ion-list>
+    <ion-infinite-scroll
+            ng-if="canWeLoadMoreContent()"
+            on-infinite="loadMore()"
+            distance="1%">
+        </ion-infinite-scroll>
+
+  </ion-content>
+
+</ion-view>
