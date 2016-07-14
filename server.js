@@ -1,9 +1,9 @@
-'use strict';
-
 var gzippo = require('gzippo');
-var express = require('express');
-var nodeApp = express();
-
-nodeApp.use(express.logger('dev'));
-nodeApp.use(gzippo.staticGzip('' + __dirname + '/app'));
-nodeApp.listen(process.env.PORT || 5000);
+var express = require('express'),
+app = express();
+app.use(express.static('www'));
+app.use(gzippo.staticGzip('' + __dirname + '/app'));
+app.set('port', process.env.PORT || 5000);
+app.listen(app.get('port'), function () {
+    console.log('Express server listening on port ' + app.get('port'));
+});
